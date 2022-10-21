@@ -28,7 +28,7 @@ namespace API
                     //Program başladığında yaptığımız herhangi bir migrationu kullanarak veritabanını oluşturmak amacı.
                     await StoreContextSeed.SeedAsync(context, loggerFactory);
                 }
-                catch (Exception ex)
+                catch (Exception ex)  //migration kısmında hata alındı. 
                 {
                     var logger = loggerFactory.CreateLogger<Program>();
                     logger.LogError(ex, "An error occured during migration");
